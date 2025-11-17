@@ -1,0 +1,99 @@
+
+/* ENTIRE BODY */
+	body {
+		margin: 0; padding: 0; background-color: #F0F5F8; }
+	body h1 { 
+		font-size: 2.15vw; }
+	body h2 { 
+		font-size: 2vw; }
+	body h3 { 
+			font-size: 1.75vw; }
+	body p {
+		font-size: 1.2vw; }
+	@media screen and (max-width: 768px) {
+		body {margin: 0% -10%; padding: 0% -10%;}}
+	
+
+
+/* HEADER */
+	.topHeader {
+		background-color:#0F1446; color: white; text-align: center; padding: 1.25%; }
+
+
+
+/* NAVIGATION */
+	.topNavigation {
+		overflow: hidden; background-color: white; padding: 0.75vw 0.5vw; text-align: center; }
+	.topNavigation a { 
+		text-align: center; color: #194867; text-decoration: none; padding: 14px 1vw; font-size: 1.2vw; }
+	.topNavigation a:hover { 
+		text-decoration: underline;}
+	.topNavigation a.Active {
+		text-decoration: underline;}
+
+
+
+/* DROP DOWN NAVIGATION */
+	.dropDown { 
+		display: inline-block;}
+	.dropDown-Content { 
+		display: none; position: absolute; background-color: #f1f1f1; margin-top: 0.2%; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;}
+	.dropDown-Content a { 
+		color: black; padding: 12px 16px; text-decoration: none; display: block; text-align: left; font-size: 1.2vw; }
+	.dropDown-Content a:hover {
+		background-color: #ddd;}
+	.dropDown:hover .dropDown-Content {
+		display: block;}
+	.dropDown:hover .topLink {
+		text-decoration: underline;}
+	@media screen and (max-width: 768px) {
+		.mobile-Br {display: none;} }
+
+
+
+/* RESOURCES */
+	.resources { 
+		margin: 0% 10%; }
+	.resources table { 
+		border-collapse: collapse; border-style: hidden; border-spacing: 10px; width: 100%;}
+	.resources td { 
+		background-color: white; color: #194867; border: 20px solid #F0F5F8; text-align: center; padding: 3% 2%; width: 25%; }
+	.resources td:hover { 
+		background-color: #194867; color: white; }
+	.resources td:hover a {
+		background-color: #194867; color: white;}
+	.resources a { 
+		text-decoration: none; color: #194867; }
+	.resources a:hover { 
+		color: white; }
+	.resources img {
+		width: 80%; border: 2px solid; border-color: black;}
+
+	
+
+
+
+/* Portrait Section */
+	.portraits { 
+		background-color: #5B819A; padding: 2% 2% 1.5% 0px; font-size: 1.2vw; }
+	.portraits table { 
+		margin: 0% 10% 0% 11.5%; text-align: center;}
+	
+	.portraits img {
+		border: 2px solid; border-color: black;}
+
+	.portraits img:hover { 
+		transform:scale(1.1); }
+
+
+
+/* FOOTER */
+	.bottomFooter {
+		background-color: #153A54; color: white;}
+	.bottomFooter table { 
+		margin: 0% 10%;}
+	.bottomFooter td {
+		width: 100%; vertical-align: top; padding: 0px 20px 0px 20px;}
+
+	.bottomFooter a {
+		color: white; text-decoration: none;}
