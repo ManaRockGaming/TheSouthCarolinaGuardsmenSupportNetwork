@@ -1,244 +1,299 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8"/>
-<title>SC Military Support</title>
-<link rel="icon" type="image/x-icon" href="Permanent Photos/Search Icon.png">
-<link rel="stylesheet" type="text/css" href="general.css" />
-<style>
-    /* Home Page - Top News */
-        .topNews { 
-            background-color: #0F1446; color: white; text-align: center; margin: 0% 10%; padding: 1% 10%; }
-
-    /* Home Page - AI Section*/
-        .aiSection { 
-            margin: 0% 10%; padding: 1% 0px 1% 0px; }
-        .aiSection table { 
-            border-collapse: collapse; border-style: hidden; vertical-align: top }
-        .aiSection td { 
-            border: 20px solid #F0F5F8; }
-
-    /* Home Page - External Documents & Folders */
-        .externalDocuments { 
-            background-color: white; color: #194867; padding: 0px 20px; width: 40%;}
-        .externalDocuments a { 
-            text-decoration: none; color: #194867; }
-        .externalDocuments a:hover { 
-            text-decoration: underline; }
-
-        .folders a {
-            text-decoration: none; color: #194867; }
-        .folders a:hover {
-            text-decoration: underline; }
-        .folders h2 {
-            display: inline; padding: 10px; }
-
-    /* Portrait Specific For Each Page */
-        .portraits td { width: 16.67%; padding: 0% 2%;}
-        .portraits img { width: 50%;}
-
-</style>
-</head>
-<body>
-
-<!-- TOP HEADER -->
-<header>
-
-    <div class="topHeader">
-        <h1>THE SOUTH CAROLINA GUARDSMEN SUPPORT NETWORK</h1>
-    </div>
-
-</header>
-
-<!-- TOP NAVIGATION -->
-<navigation>
-    
-    <div class="topNavigation">
-        <div class="dropDown">
-            <a class="Active" href="index.html">HOME</a>
-        </div>
-        <div class="dropDown">
-            <a href="Admin.html">SC ARMY NATIONAL GUARD</a>
-        </div>
-        <div class="dropDown">
-            <a href="Provost.html">SC AIR NATIONAL GUARD</a>
-        </div>
-        <div class="dropDown">
-            <a href="Operations.html">SC STATE GUARD</a>
-        </div>
-        <div class="dropDown">
-            <a href="SergeantMajor.html">DONATE</a>
-        </div>
-        <div class="dropDown">
-            <a href="GeneralResources.html" style="font-size: 1.2vw;">OTHER</a>
-            <div class="dropDown-Content">
-                <a href="RegimentalCommander.html">BYLAWS</a>
-                <a href="RegimentalCommander.html">STAFF</a>
-                <a href="RegimentalCommander.html">BOARD OF DIRECTORS</a>
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Password Protected Page</title>
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #dialogText {
+            color: white;
+            background-color: #333333;
+        }
+        
+        #dialogWrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: table;
+            background-color: #EEEEEE;
+        }
+        
+        #dialogWrapCell {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        #mainDialog {
+            max-width: 400px;
+            margin: 5px;
+            border: solid #AAAAAA 1px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px 3px #AAAAAA;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #FFFFFF;
+            overflow: hidden;
+            text-align: left;
+        }
+        #mainDialog > * {
+            padding: 10px 30px;
+        }
+        #passArea {
+            padding: 20px 30px;
+            background-color: white;
+        }
+        #passArea > * {
+            margin: 5px auto;
+        }
+        #pass {
+            width: 100%;
+            height: 40px;
+            font-size: 30px;
+        }
+        
+        #messageWrapper {
+            float: left;
+            vertical-align: middle;
+            line-height: 30px;
+        }
+        
+        .notifyText {
+            display: none;
+        }
+        
+        #invalidPass {
+            color: red;
+        }
+        
+        #success {
+            color: green;
+        }
+        
+        #submitPass {
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #E7E7E7;
+            border: solid gray 1px;
+            float: right;
+            cursor: pointer;
+        }
+        #contentFrame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #attribution {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        #attribution, #attribution a {
+            color: #999;
+        }
+        .error {
+            display: none;
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <div id="dialogWrap">
+        <div id="dialogWrapCell">
+            <div id="mainDialog">
+                <div id="dialogText">This page is password protected.</div>
+                <div id="passArea">
+                    <p id="passwordPrompt">Password</p>
+                    <input id="pass" type="password" name="pass" autofocus>
+                    <div>
+                        <span id="messageWrapper">
+                            <span id="invalidPass" class="error">Sorry, please try again.</span>
+                            <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
+                            <span id="success" class="notifyText">Success!</span>
+                            &nbsp;
+                        </span>
+                        <button id="submitPass" type="button">Submit</button>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <div id="securecontext" class="error">
+                    <p>
+                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
+                    </p>
+                </div>
+                <div id="nocrypto" class="error">
+                    <p>
+                        Your web browser appears to be outdated. Please visit this page using a modern browser.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-    
-</navigation>
-
-<!-- MAIN CONTENT -->
-<article>
-
-    <p></p>
-
-    <!-- TOP NEWS -->
-    <div class="topNews">
-        <p style="font-size: 2vw;">
-            2025-2026 Projected Annual Budget & Support Goals
-        </p>
-        <hr>
-        <p><a href="https://citadelits.sharepoint.com/:x:/s/RegimentalStaff/EYGsQYS3BwVHtHr8UKgyX58B9C45VOkJReGp_NXMfPLPdw" target="_blank"><button style="width: 10%; font-size: 1.2vw;">Link</button></a></p>
+    <div id="attribution">
+        Protected by <a href="https://pagecrypt.lupine.dev/">PageCrypt</a>
     </div>
-    
-    <!-- AI SECTION -->
-    <div class="aiSection">
-        <table>
-            <tr>
-                <td style="width: 70%;">
-                    <a href="https://citadelits.sharepoint.com/:b:/s/RegimentalStaff/EYN8GdS-bxJPjhxttTbdu7MBBwXxvz3ykaKmughqnSakng" target="_blank"><img src="Permanent Photos/Large_Photo.jpg" style="width: 100%;"></a>
-                    <!-- <a href="" onclick="alert('It Is Under Construction!')"><img src="Holiday Photos/Christmas_Light_Notice.png" alt="Coming Soon" style="width: 100%;"></a>-->
-                </td>
-                <td style="width: 30%;">
-                    <a href="RegimentalCommander.html"><img src="Permanent Photos/Tab_EquipmentSupport.jpg" style="width: 90%; float: right;"></a>
-                    </br>
-                    <a href="SergeantMajor.html"><img src="Permanent Photos/Tab_FamilySupport.png" style="width: 90%; padding: 11.5% 0% 0% 0%; float: right;"></a>
-                    </br>
-                    <a href="RegimentalStaff.html"><img src="Permanent Photos/Tab_FuneralSupport.png" style="width: 90%; padding: 11.5% 0% 0% 0%; float: right;"></a>
-                </td>
-            </tr>
-        </table>
-    </div>
-    
-    <!-- EXTERNAL DOCUMENTS & FOLDERS-->
-    <div style="margin: 0% 10%;">
-        <table>
-            <tr>
-                <td class="externalDocuments">
-                    <h2>EXTERNAL LINKS</h2>
-                    <a href="https://www.citadel.edu/commandant/cadet-regulations/the-white-book/" target="_blank"><p>The South Carolina Military Department</p></a>
-                    <a href="https://www.citadel.edu/commandant/cadet-regulations/the-white-book/" target="_blank"><p>The South Carolina Army National Guard</p></a>
-                    <a href="https://web.citadel.edu/root/images/commandant/garrott/whitebook2022/wb_5_4_room_arrangement.pdf" target="_blank"><p>The South Carolina Air National Guard</p></a>
-                    <a href="https://web.citadel.edu/root/images/commandant/blue-book.pdf" target="_blank"><p>The South Carolina State Guard</p></a>
-                </td>
-                <td style="padding-left: 20px; text-align: center;">
-                    
-                    <h1>THE SOUTH CAROLINA GUARDSMEN SUPPORT NETWORK'S MISSION:</h1>
-                    <p>The South Carolina Guardsmen Support Network is a non-governmental organization dedicated to strengthening the South Carolina Army National Guard, Air National Guard, and State Guard through connection, collaboration, and support. We empower service members and their families by fostering cross-branch cooperation, assisting with equipment and readiness needs, and building a unified community across all components of the South Carolina Military Department.</p>
-                    <hr>
-                    
-                </td>
-            </tr>
-        </table>
-    </div>
-    
-    <p></p>
-    
-    <!-- RESOURCES -->
-    <div class="resources">
-        <table>
-            <tr>
-                <td><a href="c:\Users\conor\Desktop\1BNStaffWebsite\2026 1BN Training Manual.docx"  target="_blank"><img src="Permanent Photos/Photo_1.jpg"><h2>NGO Bylaws</h2><p>How the SC Guardsmen Support Network helps the soldiers of South Carolina.</p></a></td>
-                <td><a href="https://scsgstateguard.sharepoint.com/:w:/s/1stBattalionWIP/EWhC61oQEKNOg86P7ksJbCYB6bmcw5pNhoME88DtgYAPkQ?e=3QzOkp" target="_blank"><img src="Permanent Photos/Photo_2.jpg"><h2>NGO Staff</h2><p>The volunteer staff which allow the SC Guardsmen Support Network to function.</p></a></td>
-                <td><a href="https://citadelits.sharepoint.com/:b:/s/RegimentalStaff/EaWtQ9JqpmNIrLjbifg6APwBjOwih_-JgbSdYUP0GJKaaA"  target="_blank"><img src="Permanent Photos/Photo_3.jpg"><h2>Board of Directors</h2><p>The board of directors which help to guide the SC Guardsmen Support Network.</p></a></td>
-                <td><a href="https://citadelits.sharepoint.com/:b:/s/RegimentalStaff/EbXgvHJ-yT5Osa4sjpGx0RcBuLHpHMBA8oFZItXMrq_eLQ?e=QkhKFh"  target="_blank"><img src="Permanent Photos/Photo_4.jpg"><h2>Donate</h2><p>Every donation of cash, old equipment, or uniforms are deeply appreciated.</p></a></td>
-            </tr>
-        </table>
-    </div>
-    
-    <p></p>
+    <script>
+    (function() {
 
-</article>
+        var pl = "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";
+        
+        var submitPass = document.getElementById('submitPass');
+        var passEl = document.getElementById('pass');
+        var invalidPassEl = document.getElementById('invalidPass');
+        var trycatcherror = document.getElementById('trycatcherror');
+        var successEl = document.getElementById('success');
+        var contentFrame = document.getElementById('contentFrame');
+        
+        // Sanity checks
 
-<!-- PORTRAITS + FOOTER -->
-<footer>
+        if (pl === "") {
+            submitPass.disabled = true;
+            passEl.disabled = true;
+            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
+            return;
+        }
 
-    <!-- PORTRAITS -->
-    <div class="portraits">
-        <table>
-            <tr>
-                <td>
-                    <img src="Portrait Photos/C1 - RCO.png" alt="Portrait of Current RCO">
-                </td>
-                <td>
-                    <img src="Portrait Photos/C1 - Deputy RCO.png" alt="Portrait of Current Deputy RCO">
-                </td>
-                <td>
-                    <img src="Portrait Photos/C1 - Regimental XO.png" alt="Portrait of Current Regimental XO">
-                </td>
-                <td>
-                    <img src="Portrait Photos/C2 - Regimental CSM.png" alt="Portrait of Current Regimental CSM">
-                </td>
-                <td>
-                    <img src="Portrait Photos/C2 - Regimental CSM.png" alt="Portrait of Current Regimental CSM">
-                </td>
-                <td>
-                    <img src="Portrait Photos/C2 - Regimental CSM.png" alt="Portrait of Current Regimental CSM">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    LTC William Rom (US Army Ret.)</br> Chair
-                </td>
-                <td>
-                    MAJ </br>XXXXXXXXX</br> Vice Chair
-                </td>
-                <td>
-                    SSG </br>XXXXXXXXX</br> Secretary
-                </td>
-                <td>
-                    MRS. </br>XXXXXXXXX</br> Board Member
-                </td>
-                <td>
-                    MR. </br>XXXXXXXXX</br> Board Member
-                </td>
-                <td>
-                    2LT Conor Rom (SC State Guard)</br> CEO
-                </td>
-            </tr>
-        </table>
-    </div>
+        if (!isSecureContext) {
+            document.querySelector("#passArea").style.display = "none";
+            document.querySelector("#securecontext").style.display = "block";
+            return;
+        }
 
-    <!-- BOTTOM FOOTER -->
-    <div class="bottomFooter">
-        <table>
-            <tr>
-                <td>
-                    <h3>The South Carolina Guardsmen Support Network</h3>
-                    <p>Public Mail Box: 1670 Springdale Dr Unit 11-A PMB#260, Camden, SC 29020</p>
+        if (!crypto.subtle) {
+            document.querySelector("#passArea").style.display = "none";
+            document.querySelector("#nocrypto").style.display = "block";
+            return;
+        }
+        
+        function str2ab(str) {
+            var ustr = atob(str);
+            var buf = new ArrayBuffer(ustr.length);
+            var bufView = new Uint8Array(buf);
+            for (var i=0, strLen=ustr.length; i < strLen; i++) {
+                bufView[i] = ustr.charCodeAt(i);
+            }
+            return bufView;
+        }
 
-                    <p>
-                        <a href="">Home</a>
-                        |
-                        <a href="" target="_blank">Donate</a>
-                        |
-                        <a href="" target="_blank">Bylaws</a>
-                        |
-                        <a href="" target="_blank">Privacy Policy</a>
-                    </p>
-                    
-                    <i>
-                        <p>The South Carolina Guardsmen Support Network is a non-governmental organization. The South Carolina Guardsmen Support Network is a 501(c)(3) nonprofit under federal law, with Articles of Incorporation filled accordingly within the State of South Carolina.</p>
+        async function deriveKey(salt, password) {
+            const encoder = new TextEncoder()
+            const baseKey = await crypto.subtle.importKey(
+                'raw',
+                encoder.encode(password),
+                'PBKDF2',
+                false,
+                ['deriveKey'],
+            )
+            return await crypto.subtle.deriveKey(
+                { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+                baseKey,
+                { name: 'AES-GCM', length: 256 },
+                true,
+                ['decrypt'],
+            )
+        }
+        
+        async function doSubmit(evt) {
+            submitPass.disabled = true;
+            passEl.disabled = true;
 
-                        <p>The views expressed by The South Carolina Guardsmen Support Network or its leaders/members do not necessarily represent the views of the state of South Carolina, South Carolina Military Department, South Carolina Army National Guard, South Carolina Air National Guard, or the South Carolina State Guard.</p>
-                    </i>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 100%; vertical-align: center;">
-                    <a href="mailto:" target="_blank"><img src="Permanent Photos/Icon_Gmail.png" onmouseover="this.src='Permanent Photos/Icon_Gmail_Hover.png';" onmouseout="this.src='Permanent Photos/Icon_Gmail.png';" width="5%" alt="Button to The Citadel College Democrats' Gmail"></a>
-                    <a href="https://projects.propublica.org/nonprofits/" target="_blank"><img src="Permanent Photos/Icon_ProPublica.png" onmouseover="this.src='Permanent Photos/Icon_ProPublica_Hover.png';" onmouseout="this.src='Permanent Photos/Icon_ProPublica.png';" width="5%" alt="Button to The Citadel College Democrats' Pro Publica Report"></a>
-                </td>
+            let iv, ciphertext, key;
+            
+            try {
+                var unencodedPl = str2ab(pl);
 
-            </tr>    
-        </table>
-    </div>
+                const salt = unencodedPl.slice(0, 32)
+                iv = unencodedPl.slice(32, 32 + 16)
+                ciphertext = unencodedPl.slice(32 + 16)
 
-</footer>
+                key = await deriveKey(salt, passEl.value);
+            } catch (e) {
+                trycatcherror.style.display = "inline";
+                console.error(e);
+                return;
+            }
 
-</body>
+            try {
+                const decryptedArray = new Uint8Array(
+                    await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
+                );
+
+                let decrypted = new TextDecoder().decode(decryptedArray);
+
+                if (decrypted === "") throw "No data returned";
+
+                const basestr = '<base href="." target="_top">';
+                const anchorfixstr = `
+                    <script>
+                        Array.from(document.links).forEach((anchor) => {
+                            const href = anchor.getAttribute("href");
+                            if (href.startsWith("#")) {
+                                anchor.addEventListener("click", function(e) {
+                                    e.preventDefault();
+                                    const targetId = this.getAttribute("href").substring(1);
+                                    const targetEl = document.getElementById(targetId);
+                                    targetEl.scrollIntoView();
+                                });
+                            }
+                        });
+                    <\/script>
+                `;
+                
+                // Set default iframe link targets to _top so all links break out of the iframe
+                if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
+                else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
+                else decrypted = basestr + decrypted;
+
+                // Fix fragment links
+                if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
+                else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
+                else decrypted = decrypted + anchorfixstr;
+                
+                contentFrame.srcdoc = decrypted;
+                
+                successEl.style.display = "inline";
+                setTimeout(function() {
+                    dialogWrap.style.display = "none";
+                }, 1000);
+            } catch (e) {
+                invalidPassEl.style.display = "inline";
+                passEl.value = "";
+                submitPass.disabled = false;
+                passEl.disabled = false;
+                console.error(e);
+                return;
+            }
+        }
+        
+        submitPass.onclick = doSubmit;
+        passEl.onkeypress = function(e){
+            if (!e) e = window.event;
+            var keyCode = e.keyCode || e.which;
+            invalidPassEl.style.display = "none";
+            if (keyCode == '13'){
+              // Enter pressed
+              doSubmit();
+              return false;
+            }
+        }
+    })();
+    </script>
+  </body>
 </html>

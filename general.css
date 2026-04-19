@@ -5,7 +5,9 @@
 	body h1 { 
 		font-size: 2.15vw; }
 	body h2 { 
-		font-size: 2vw; }
+		font-size: 2vw;
+		margin-bottom: 0;
+		margin-top: 0.50em; }
 	body h3 { 
 			font-size: 1.75vw; }
 	body p {
@@ -57,7 +59,7 @@
 	.resources table { 
 		border-collapse: collapse; border-style: hidden; border-spacing: 10px; width: 100%;}
 	.resources td { 
-		background-color: white; color: #194867; border: 20px solid #F0F5F8; text-align: center; padding: 3% 2%; width: 25%; }
+		background-color: white; color: #194867; border: 20px solid #F0F5F8; text-align: center; padding: 2% 2%; width: 25%; }
 	.resources td:hover { 
 		background-color: #194867; color: white; }
 	.resources td:hover a {
@@ -97,3 +99,168 @@
 
 	.bottomFooter a {
 		color: white; text-decoration: none;}
+
+
+/* ANIMATED LINK */
+
+	.animatedLink a {
+		position: relative;
+		font-family: Times New Roman; 
+		color: white; 
+		text-decoration: none; 
+		font-size: 1.5rem;}
+	
+	.animatedLink a::after {
+		content: "";
+    	position: absolute;
+    	left: 0;
+    	right: 0;
+    	bottom: 0px;
+    	height: 1.5px;
+    	background: white;
+    	transform: scaleX(0);
+    	transform-origin: center;
+    	transition: transform 0.3s ease;}
+
+	.animatedLink a:hover::after {
+		transform: scaleX(1);}
+
+/* ANIMATED LINKS BLACK */
+
+    .animatedLinkBlack a {
+		position: relative; 
+		font-family: Times New Roman; 
+		color: black; 
+		text-decoration: none; 
+		font-size: 1.5rem;}
+
+	.animatedLinkBlack a::after {
+		content: "";
+    	position: absolute;
+    	left: 0;
+    	right: 0;
+    	bottom: 0px;
+    	height: 1.5px;
+    	background: black;
+    	transform: scaleX(0);
+    	transform-origin: center;
+    	transition: transform 0.3s ease;}
+
+	.animatedLinkBlack a:hover::after {
+		transform: scaleX(1);}
+
+/* ANIMATED LINKS BLUE */
+
+    .animatedLinkBlue a {
+		position: relative; 
+		font-family: Times New Roman; 
+		color: #194867; 
+		text-decoration: none; 
+		font-size: 1.5rem;}
+
+	.animatedLinkBlue a::after {
+		content: "";
+    	position: absolute;
+    	left: 0;
+    	right: 0;
+    	bottom: 0px;
+    	height: 1.5px;
+    	background: black;
+    	transform: scaleX(0);
+    	transform-origin: center;
+    	transition: transform 0.3s ease;}
+
+	.animatedLinkBlue a:hover::after {
+		transform: scaleX(1);}
+
+
+/* ANIMATED LINK */
+
+	.animatedLinkSwap h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.animatedLinkSwap h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.5px;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.animatedLinkSwap a:hover h2::after {
+    transform: scaleX(1);
+}
+
+.animatedLinkSwap p {
+    position: relative;
+    display: inline-block;
+}
+
+.animatedLinkSwap p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.5px;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+.animatedLinkSwap a:hover p::after {
+    transform: scaleX(1);
+}
+
+
+
+
+
+/* */
+
+.homepageNavigationContainer {
+    	background-color:white; color: #194867; text-align: center; padding: 1%; 
+		
+		display: flex;
+    	flex-wrap: nowrap;
+    	justify-content: center;
+    	align-items: center;
+    	gap: 2vw;
+    	width: 100%;
+		z-index: 4;}
+
+
+.animatedLinkNavigation a {
+		text-decoration: none;
+    	color: #194867;
+    	display: inline-block;
+    	position: relative;
+		font-size: 1.25vw;
+		font-weight: bold;}
+		
+	
+	.animatedLinkNavigation a::after {
+		content: "";
+    	position: absolute;
+    	left: 0;
+    	right: 0;
+    	bottom: 0px;
+    	height: 1.5px;
+    	background: #194867;
+    	transform: scaleX(0);
+    	transform-origin: center;
+    	transition: transform 0.3s ease;}
+
+	.animatedLinkNavigation a:hover::after {
+		transform: scaleX(1);}
+
+
+	.animatedLinkNavigation a.active::after {
+    	transform: scaleX(1);}
